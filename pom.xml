@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.javaetmoi.maven</groupId>
+  <version>1.0-SNAPSHOT</version>
+  <artifactId>maven-config-github-cloudbees</artifactId>
+  <name>JavaEtMoi Maven :: ${project.artifactId} - ${project.packaging}</name>
+  <packaging>pom</packaging>
+  <description>Maven configuration example pom.xml file for working with GitHub and the CloudBees maven repository</description>
+  <inceptionYear>2012</inceptionYear>
+  <url>https://github.com/arey/maven-config-github-cloudbees</url>
+
+  <developers>
+    <developer>
+      <id>arey</id>
+      <name>Antoine Rey</name>
+      <email>antoine@javaetmoi.com</email>
+      <url>http://javaetmoi.com</url>
+      <timezone>+1</timezone>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <!-- Continuous Integration build hosted by CloudBees -->
+  <ciManagement>
+    <system>jenkins</system>
+    <url>https://javaetmoi.ci.cloudbees.com/job/Maven-Config-GitHub-Cloudbees/</url>
+  </ciManagement>
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/arey/maven-config-github-cloudbees/issues</url>
+  </issueManagement>
+
+
+  <!-- GitHub Software Configuration Management -->
+  <scm>
+    <url>https://github.com/arey/maven-config-github-cloudbees</url>
+    <connection>scm:git:ssh://git@github.com/arey/maven-config-github-cloudbees.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/arey/maven-config-github-cloudbees.git</developerConnection>
+  </scm>
+
+  <build>
+    <extensions>
+      <!-- Extension required to deploy a snapshot or a release to the CloudBees remote maven repository using Webdav -->
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+
+    <plugins>
+      <!-- Plugin used to process release using the command line: mvn release:prepare release:perform -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.2.2</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Deploy releases and snapshots to the CloudBees maven repositories -->
+  <distributionManagement>
+    <downloadUrl>https://github.com/arey/maven-config-github-cloudbee</downloadUrl>
+    <repository>
+      <id>javaetmoi-cloudbees-release</id>
+      <name>javaetmoi-cloudbees-release</name>
+      <!-- Webdav repository url are prefixed with dav: -->
+      <url>dav:https://repository-javaetmoi.forge.cloudbees.com/release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>javaetmoi-cloudbees-snapshot</id>
+      <name>javaetmoi-cloudbees-snapshot</name>
+      <url>dav:https://repository-javaetmoi.forge.cloudbees.com/snapshot/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <!-- Cloudbees maven repositories for releases and snapshots -->
+    <repository>
+      <id>javaetmoi-cloudbees-release</id>
+      <name>javaetmoi-cloudbees-release</name>
+      <url>https://repository-javaetmoi.forge.cloudbees.com/release/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>javaetmoi-cloudbees-snapshot</id>
+      <name>javaetmoi-cloudbees-snapshot</name>
+      <url>https://repository-javaetmoi.forge.cloudbees.com/snapshot/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+
+</project>
