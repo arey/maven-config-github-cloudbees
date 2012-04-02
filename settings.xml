@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <servers>
+
+    <!-- Connection credentials to the Cloudbees webdav repositories -->
+    <server>
+      <id>javaetmoi-cloudbees-snapshot</id>
+      <username>javaetmoi</username> <!-- See authenticated access username on your CloudBees forge -->
+      <password>YOUR CLOUDBEES PASSWORD</password>
+    </server>
+    <server>
+      <id>javaetmoi-cloudbees-release</id>
+      <username>javaetmoi</username>
+      <password>YOUR CLOUDBEES PASSWORD</password>
+    </server>
+
+  </servers>
+</settings>
