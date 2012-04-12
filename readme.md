@@ -10,9 +10,11 @@ The primary goal of the [Maven configuration for GitHub and CloudBees](https://g
 
 ## Getting Help ##
 
-This readme file as well as the [wiki](https://github.com/arey/maven-config-github-cloudbeesswiki) are the best places to start learning about Hibernate Hydrate. 
+This readme file as well as the [wiki](https://github.com/arey/maven-config-github-cloudbeesswiki) are the best places to start learning about Hibernate Hydrate.
+
 The (GitHub CloudBees Community)[https://github.com/CloudBees-community] has already forked this project and thus could improve configuration files.
-An article published to the french blog (Java & Moi)[http://javaetmoi.com].
+
+An (article published to the french blog Java & Moi)[http://javaetmoi.com/2012/04/release-maven-windows-github-deploy-cloudbees/].
 
 
 ## Quick Start ##
