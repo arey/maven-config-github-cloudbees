@@ -93,6 +93,14 @@
       <name>javaetmoi-cloudbees-snapshot</name>
       <url>dav:https://repository-javaetmoi.forge.cloudbees.com/snapshot/</url>
     </snapshotRepository>
+    <!-- To be able to deploy the site into a "sites" directory under the cloudbees-forge release repo -->
+    <!-- Note: the javaetmoi-cloudbees-site <server> tag has to be setup in your settings.xml
+    <!-- Maven command line: mvn site-deploy -->
+    <site>
+      <id>javaetmoi-cloudbees-site</id>
+      <name>javaetmoi-cloudbees-site</name>
+      <url>dav:https://repository-javaetmoi.forge.cloudbees.com/release/sites/${project.artifactId}</url>
+   </site>    
   </distributionManagement>
 
   <repositories>
