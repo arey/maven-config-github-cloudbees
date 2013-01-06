@@ -7,6 +7,7 @@ The primary goal of the [Maven configuration for GitHub and CloudBees](https://g
 * Download artifacts from a maven repository hosted on the CloudBees forge
 * Deploy artifacts to maven repository hosted on the CloudBees forge
 * Release a project hosted on GitHub with the maven release plugin
+* Hosting maven site under the cloudbees-forge release repository
 
 ## Getting Help ##
 
